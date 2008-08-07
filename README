@@ -1,0 +1,32 @@
+== RubyRc4
+
+RubyRc4 is a pure Ruby implementation of the Rc4 algorithm.
+
+== Using
+
+First, construct two new instances of RubyRc4 class:
+
+  encryptor = RubyRc4.new('mysecret_key')
+  decryptor = RubyRc4.new('mysecret_key')
+
+And encrypt any string you want:
+
+  encrypted_data = encryptor.encrypt('secret_data')
+  
+Or decrypt it:
+
+  plain_text = decryptor.encrypt(encrypted_data)
+  
+Finally, you can check equality if you want:
+
+  plain_text.eql?('secret_data')
+
+== Shoes GUI
+
+Also library has Shoes GUI. You can find it in gui/main.rb
+
+== Feedback
+
+If you have any questions, suggestions or just want to talk, just send me email.
+
+Enjoy!
