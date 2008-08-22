@@ -12,13 +12,22 @@ class RubyRc4
       @s[i], @s[j] = @s[j], @s[i]
     end    
   end
-  
-  def encrypt(text)
-    0.upto(text.length-1) {|i| text[i] = text[i] ^ round}
-    text
+    
+  def encrypt!(text)
+    process text
   end  
   
+  def encrypt(text)
+    tmp = text.clone # to protect the original string
+    process tmp
+  end 
+  
   private
+
+  def process(text)
+    0.upto(text.length-1) {|i| text[i] = text[i] ^ round}
+    text
+  end
   
   def round
     @q1 = (@q1 + 1)%256
