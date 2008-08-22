@@ -18,8 +18,7 @@ class RubyRc4
   end  
   
   def encrypt(text)
-    tmp = text.clone # to protect the original string
-    process tmp
+    process text.dup
   end 
   
   private
