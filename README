@@ -16,7 +16,12 @@ And encrypt any string you want:
 Or decrypt it:
 
   plain_text = decryptor.encrypt(encrypted_data)
-  
+
+Also, you can use encrypt method destructively on the original string:
+
+    s = 'secret string'
+    encryptor.encrypt!(s)
+
 Finally, you can check equality if you want:
 
   plain_text.eql?('secret_data')
